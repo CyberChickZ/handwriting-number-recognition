@@ -67,9 +67,10 @@ def main():
         plt.figure(n)
         plt.imshow(x[0].view(28, 28))  # Show image
         plt.title("prediction: " + str(int(predict)))  # Show predicted label
+        plt.savefig("test_" + str(n) + ".png") # Save prediction plots
     plt.show()  # Display plots
-
-
+    
+    torch.save(net.state_dict(), "model.pt")  # Save the trained model
 
 if __name__ == "__main__":
     main()
